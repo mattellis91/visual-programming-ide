@@ -27,7 +27,9 @@ export class CanvasPanelComponent  implements OnInit, AfterViewInit {
     editor.start();
 
     var html = `
-    <div>sdf</div>
+    <div>
+      <div class='node-header'>Set Var</div>
+      </div>
     `;
     var data = { "name": '' };
 

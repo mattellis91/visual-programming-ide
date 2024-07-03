@@ -18,6 +18,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { SplitterModule } from 'primeng/splitter';
 import { AngularSplitModule } from 'angular-split';
 import { TreeModule } from 'primeng/tree';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TreeModule } from 'primeng/tree';
     ColorPickerModule,
     SplitterModule,
     AngularSplitModule,
-    TreeModule
+    TreeModule,
+    SelectButtonModule
   ],
   providers: [
     EditorService
