@@ -17,6 +17,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { SplitterModule } from 'primeng/splitter';
 import { AngularSplitModule } from 'angular-split';
+import { TreeModule } from 'primeng/tree';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AngularSplitModule } from 'angular-split';
     TabViewModule,
     ColorPickerModule,
     SplitterModule,
-    AngularSplitModule
+    AngularSplitModule,
+    TreeModule
   ],
   providers: [
     EditorService
