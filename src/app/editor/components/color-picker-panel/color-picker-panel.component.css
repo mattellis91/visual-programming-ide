@@ -1,0 +1,8 @@
+.color-picker-panel {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.color-picker-panel > * {
+  width: 100%;
+}/*# sourceMappingURL=color-picker-panel.component.css.map */

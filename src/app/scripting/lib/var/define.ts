@@ -6,6 +6,19 @@ export class VarDefine extends EditorNode {
     nodeHtml = 
     `<div>
         <div class='node-header'>Def Var</div>
+        <div class='node-body'>
+            <div>
+                <div class='node-field var-name'>
+                    <span>Name: </span>
+                    <input type='text' />
+                </div>
+                <div class='node-field var-val'>
+                    <span>Val: </span>
+                    <input type='text' />
+                </div>
+            </div>
+            <div>Val</div>
+        </div>
     </div>
     `;
 

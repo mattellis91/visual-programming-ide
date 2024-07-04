@@ -6,6 +6,20 @@ export class VarGet extends EditorNode {
     nodeHtml = 
     `<div>
         <div class='node-header'>Get Var</div>
+        <div class='node-body'>
+            <div>
+                <div class='node-field var-select'>
+                    <span>Var</span>
+                    <select name='vars'>
+                        <option value="volvo">Var 1</option>
+                        <option value="saab">Var 2</option>
+                        <option value="mercedes">Var 3</option>
+                        <option value="audi">Var 4</option>
+                    </select>
+                </div>
+            </div>
+            <div>Val</div>
+        </div>
     </div>
     `;
 
@@ -19,12 +33,6 @@ export class VarGet extends EditorNode {
             title: 'Get var',
             description: 'Get a variable',
             inputs: [
-                {
-                    key: 'value',
-                    description: 'value of variable',
-                    type: E_NodeDataType.Any,
-                    required: false,
-                }
             ],
             outputs: [
                 {

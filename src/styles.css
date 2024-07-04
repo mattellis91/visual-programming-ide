@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+.drawflow .drawflow-node {
+  border-radius: 8px;
+  background: #181818;
+  border: 2px solid #494949;
+  color: white;
+  min-width: 250px;
+  padding: 0;
+}
+.drawflow .drawflow-node .node-header {
+  background: #494949;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+.drawflow .drawflow-node .node-body {
+  padding: 15px;
+}
+
+.drawflow .drawflow-node.selected {
+  background: #181818;
+  border: 2px solid rgb(250, 0, 175);
+}
+
+.drawflow .drawflow-node .input, .drawflow .drawflow-node .output {
+  background: #181818;
+  border: 3px solid #494949;
+  width: 15;
+  height: 15;
+}
+
+.drawflow .drawflow-node .input {
+  left: 0px;
+}
+
+.drawflow .drawflow-node .output {
+  right: 0px;
+}
+
+.drawflow .drawflow-node .output:hover, .drawflow .drawflow-node .input:hover {
+  background: #494949;
+  border: 3px solid rgb(250, 0, 175);
+}
+
+.drawflow .connection .main-path {
+  stroke-width: 3px;
+  stroke: #c5c343;
+}
+
+.drawflow .connection .main-path:hover {
+  stroke: rgb(250, 0, 175);
+}
+
+.parent-node .drawflow-delete {
+  display: none !important;
+}
+
+.drawflow .drawflow-node.selected .drawflow_content_node .header {
+  background: rgb(250, 0, 175);
+}
+
+.drawflow .drawflow-node .drawflow_content_node .node-body {
+  display: flex;
+}
+
+.drawflow .drawflow-node .drawflow_content_node .node-body .node-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.drawflow .drawflow-node .drawflow_content_node .node-body input {
+  display: inline;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: #494949;
+}
+
+.drawflow .drawflow-node .drawflow_content_node .node-body input:focus {
+  outline: none;
+}
+
+.drawflow .drawflow-node .drawflow_content_node .node-body .node-field input, .drawflow .drawflow-node .drawflow_content_node .node-body .node-field select {
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+/*-------------- Var Define --------------- */
+.drawflow .drawflow-node.var-define .drawflow_content_node .node-body > div:nth-child(1) {
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  width: 70%;
+}
+.drawflow .drawflow-node.var-define .drawflow_content_node .node-body > div:nth-child(2) {
+  margin-right: 1rem;
+  width: 30%;
+  text-align: right;
+}
+
+.drawflow .drawflow-node.var-define .drawflow_content_node .node-body .node-field:nth-child(1) {
+  margin-bottom: 0.5rem;
+}
+
+.drawflow .drawflow-node.var-define .inputs .input:nth-child(1) {
+  top: 43px;
+  left: 5px;
+}
+
+.drawflow .drawflow-node.var-define .outputs .output:nth-child(1) {
+  top: 15px;
+  right: 25px;
+}
+
+/*-------------- Var Set --------------- */
+.drawflow .drawflow-node.var-set .drawflow_content_node .node-body > div:nth-child(1) {
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  width: 70%;
+}
+.drawflow .drawflow-node.var-set .drawflow_content_node .node-body > div:nth-child(2) {
+  margin-right: 1rem;
+  width: 30%;
+  text-align: right;
+}
+
+.drawflow .drawflow-node.var-set .drawflow_content_node .node-body .node-field:nth-child(1) {
+  margin-bottom: 0.5rem;
+}
+
+.drawflow .drawflow-node.var-set .inputs .input:nth-child(1) {
+  top: 43px;
+  left: 5px;
+}
+
+.drawflow .drawflow-node.var-set .outputs .output:nth-child(1) {
+  top: 15px;
+  right: 25px;
+}
+
+/*-------------- Var Get --------------- */
+.drawflow .drawflow-node.var-get .drawflow_content_node .node-body > div:nth-child(1) {
+  margin-right: 0.5rem;
+  width: 70%;
+}
+.drawflow .drawflow-node.var-get .drawflow_content_node .node-body > div:nth-child(2) {
+  margin-right: 1rem;
+  width: 30%;
+  text-align: right;
+}
+
+.drawflow .drawflow-node.var-get .drawflow_content_node .node-body .node-field:nth-child(1) {
+  margin-bottom: 0.5rem;
+}
+
+.drawflow .drawflow-node.var-get .inputs .input:nth-child(1) {
+  top: 43px;
+  left: 5px;
+}
+
+.drawflow .drawflow-node.var-get .outputs .output:nth-child(1) {
+  top: 25px;
+  right: 25px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.p-splitter {
+  background: none;
+  border-radius: 0;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.ml-1 {
+  margin-left: 0.5rem;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.p-tabview, .p-tabview-nav, .p-tabview-panels, .p-tabview-panel, .p-tabview-panels .p-tabview-panel {
+  background: none;
+  border-radius: 0;
+  z-index: 1000;
+  font-size: small;
+}
+.p-tabview .p-tabview-nav-link, .p-tabview-nav .p-tabview-nav-link, .p-tabview-panels .p-tabview-nav-link, .p-tabview-panel .p-tabview-nav-link, .p-tabview-panels .p-tabview-panel .p-tabview-nav-link {
+  z-index: 1000;
+  background: none;
+  border-radius: 0;
+}
+
+.p-tree {
+  border: none;
+  background: none;
+  padding: 1rem;
+}
+
+.p-tabview, .p-tabview-panels {
+  height: 100%;
+  padding: 0;
+}
+.p-tabview .p-tabview-panel, .p-tabview-panels .p-tabview-panel {
+  height: 100%;
+}
+
+footer {
+  background: black;
+  padding: 0.5rem;
+}/*# sourceMappingURL=styles.css.map */

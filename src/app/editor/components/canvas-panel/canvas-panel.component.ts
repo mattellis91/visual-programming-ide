@@ -71,7 +71,9 @@ export class CanvasPanelComponent  implements OnInit, AfterViewInit {
     var html = n.nodeHtml;
     var data = { "name": '' };
 
-    this.editor!.addNode('github', sig.inputs.length, sig.outputs.length, pos_x, pos_y, 'github', data, html, false);
+    const name = n.signature().name.split('.').join('-');
+
+    this.editor!.addNode(name, sig.inputs.length, sig.outputs.length, pos_x, pos_y, name, data, html, false);
 
   }
 
