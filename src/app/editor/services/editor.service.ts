@@ -58,7 +58,7 @@ export class EditorService {
           label: sig.title,
           id: key,
           Draggable: true,
-          Droppable: false,
+          Droppable: true,
           selectable: true
         });
       } else {

@@ -1,35 +1,52 @@
 <div class="container">
-    <div class="split-example" style="height: 100vh; width: 100vw;">
-      <as-split direction="horizontal" restrictMove="true" [useTransition]="true" [gutterSize]="1">
-        <as-split-area size="15">  
+      <as-split direction="horizontal" restrictMove="true" [useTransition]="true" [gutterSize]="35">
+        <div *asSplitGutter class="custom-hand-gutter">
+            <div asSplitGutterDragHandle class="custom-hand-gutter-icon"></div>
+        </div>
+        <as-split-area size="10">  
             <app-palete-panel></app-palete-panel>
         </as-split-area>
-        <as-split-area size="85">
-          <as-split direction="vertical" restrictMove="false" [gutterSize]="1">
-            <as-split-area size="80">
-                <p-tabView>
+        <as-split-area size="80">
+          <as-split direction="vertical" restrictMove="false" [gutterSize]="35">
+            <div *asSplitGutter class="custom-hand-gutter">
+                <div asSplitGutterDragHandle class="custom-hand-gutter-icon"></div>
+            </div>
+            <as-split-area size="70">
+                <!-- <p-tabView>
                     <p-tabPanel header="main">
-                        <app-canvas-panel></app-canvas-panel>
                     </p-tabPanel>
-                    <!-- <p-tabPanel header="File 2">
+                    <p-tabPanel header="File 2">
                         <p>
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
                         </p>
-                    </p-tabPanel> -->
-                </p-tabView>  
+                    </p-tabPanel>
+                </p-tabView>   -->
+                <app-canvas-panel></app-canvas-panel>
             </as-split-area>
-            <as-split-area size="20">
-                <as-split direction="horizontal" restrictMove="true" [useTransition]="true" [gutterSize]="1">
-                    <as-split-area size="50">
-                        Input
-                    </as-split-area>
-                    <as-split-area size="50">
-                        Output
-                    </as-split-area>
-                </as-split>
+            <as-split-area size="30">
+                <div class="container">
+                    <div style="display: flex; flex-direction: row; height: 100%; row-gap: .5rem">
+                        <div style="width: 50%;">
+                            <p-fieldset legend="Input"></p-fieldset>
+                        </div>
+                        <div style="width: 50%;">
+                            <p-fieldset legend="Output"></p-fieldset>
+                        </div>
+                    </div>
+                </div>
             </as-split-area>
           </as-split>
         </as-split-area>
-      </as-split>  
-    </div>
+        <as-split-area size="10">
+            <p-fieldset legend="Data">   
+                <div class="container" style="position: relative;">   
+                    <div style="position: absolute; bottom: 0px;">
+                        <input style="width: 100%;" pInputText type="text" placeholder="enter data name" class="mb-1"/>
+                        <p-button label="Add Var" [outlined]="true" class="mr-1"></p-button>
+                        <p-button label="Add List" [outlined]="true" class="mr-1"></p-button>
+                    </div>
+                </div>
+            </p-fieldset>
+        </as-split-area>
+      </as-split>   
 </div>

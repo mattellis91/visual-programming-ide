@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { EditorService } from '../../services/editor.service';
 import { MenuItem } from 'primeng/api';
+import {TreeDragDropService} from 'primeng/api';
 
 @Component({
   selector: 'app-palete-panel',
   templateUrl: './palete-panel.component.html',
-  styleUrl: './palete-panel.component.scss'
+  styleUrl: './palete-panel.component.scss',
+  providers: [TreeDragDropService]
 })
 
 export class PaletePanelComponent {

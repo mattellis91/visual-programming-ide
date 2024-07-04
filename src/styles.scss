@@ -2,10 +2,21 @@
 @import "primeicons/primeicons.css";
 @import "editor.scss";
 
-body {
+html,body {
+    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+}
+
+.container {
+    height: 100%;
+}
+
 .p-splitter {
     background: none;
     border-radius: 0;
@@ -27,42 +38,26 @@ body {
     margin-right: .5rem;
 }
 
-.p-tabview, .p-tabview-nav, .p-tabview-panels, .p-tabview-panel, .p-tabview-panels .p-tabview-panel {
-    background: none;
-    border-radius: 0;
-    z-index: 1000;
-    font-size: small;
-    .p-tabview-nav-link {
-        z-index: 1000;
-        background: none;
-        border-radius: 0;
-    }
-}
-
 .p-tree {
     border: none;
     background: none;
     padding:1rem;
 }
 
-// .editor-content {
-//     height: 100%;
-// }
-
-// .parent-drawflow {
-//     width: 100%;
-//     height: 100%;
-// }
-
-.p-tabview, .p-tabview-panels {
+.p-fieldset {
     height: 100%;
-    padding: 0;
-    .p-tabview-panel {
+    background: none;
+    border-width: 3px;
+
+    .p-toggleable-content, .p-fieldset-content {
         height: 100%;
+        padding: 1rem;
     }
 }
-
-footer {
-    background: black;
-    padding: .5rem;
+.p-fieldset-legend {
+    background: none;
+    border: none;
+    font-weight: normal;
+    padding-top: 0;
 }
+

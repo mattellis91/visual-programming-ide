@@ -1,4 +1,13 @@
-<div class="editor-content">
-  <div id="drawflow"></div>
-</div>
+<!-- <div>
+    <div id="drawflow"></div>
+</div> -->
+<p-fieldset legend="Editor">
+  <div id="drawflow" style="position: relative;">
+    <div style="position: absolute; bottom: 0px; right:0px;">
+      <p-button icon="pi pi-plus" size="small" [outlined]="true" class="mr-1"></p-button>
+      <p-button icon="pi pi-search-plus" size="small" [outlined]="true" class="mr-1"></p-button>
+      <p-button icon="pi pi-search-minus" size="small" [outlined]="true"></p-button>
+    </div>
+  </div>
+</p-fieldset>
 <app-node-dialog></app-node-dialog>

@@ -1,8 +1,22 @@
-<p-tree *ngIf="tree" [value]="tree" [filter]="true"  [selectionMode]="'single'"
-(onNodeSelect)="nodeSelect($event)"
-filterPlaceholder="Search nodes"/>
-<!-- <p-selectButton 
-    [options]="opts" 
-    optionLabel="label" 
-    optionValue="value" /> -->
-<span *ngIf="currentNode">{{currentNode.label}}</span>
+<!-- <div class="container" style="background:red; border-radius:5px">
+    <p-tree *ngIf="tree" [value]="tree" [filter]="true"  [selectionMode]="'single'" [draggableNodes]="true"
+    droppableScope="drawflow"
+    (onNodeSelect)="nodeSelect($event)"
+    filterPlaceholder="Search nodes"/>
+    <p-selectButton 
+        [options]="opts" 
+        optionLabel="label" 
+        optionValue="value" />
+    <span *ngIf="currentNode">{{currentNode.label}}</span>
+</div> -->
+<div class="container">
+    <p-fieldset legend="Script">
+        <div class="container" style="position: relative;">   
+            <div style="position: absolute; bottom: 0px;">
+                <input style="width: 100%;" pInputText type="text" placeholder="enter subroutine name" class="mb-1"/>
+                <p-button label="Add subroutine" [outlined]="true" class="mr-1"></p-button>
+            </div>
+        </div>
+    </p-fieldset>
+</div>
+

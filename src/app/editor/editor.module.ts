@@ -21,6 +21,9 @@ import { AngularSplitModule } from 'angular-split';
 import { TreeModule } from 'primeng/tree';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DialogModule } from 'primeng/dialog';
+import {PanelModule} from 'primeng/panel';
+import { FieldsetModule } from 'primeng/fieldset';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { DialogModule } from 'primeng/dialog';
     AngularSplitModule,
     TreeModule,
     SelectButtonModule,
-    DialogModule
+    DialogModule,
+    PanelModule,
+    FieldsetModule,
+    InputTextModule
   ],
   providers: [
     EditorService
