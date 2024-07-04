@@ -1,6 +1,8 @@
-<p-tree [value]="tree" [filter]="true" 
+<p-tree *ngIf="tree" [value]="tree" [filter]="true"  [selectionMode]="'single'"
+(onNodeSelect)="nodeSelect($event)"
 filterPlaceholder="Search nodes"/>
 <!-- <p-selectButton 
     [options]="opts" 
     optionLabel="label" 
     optionValue="value" /> -->
+<span *ngIf="currentNode">{{currentNode.label}}</span>

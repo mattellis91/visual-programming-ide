@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { EditorService } from '../../services/editor.service';
 
 import Drawflow from 'drawflow';
+import { VarDefine } from '../../../scripting/lib/var/define';
+import { EditorNode } from '../../../scripting/core/editor-node';
 
 
 
@@ -12,9 +14,11 @@ import Drawflow from 'drawflow';
 })
  
 export class CanvasPanelComponent  implements OnInit, AfterViewInit {
-
   
-  constructor(private editorService:EditorService) { }
+  editor: Drawflow | undefined;
+  cursorPos: {x:number, y:number} = {x:0, y:0};
+
+  constructor(private editorService: EditorService) { }
 
   ngOnInit() {
   
@@ -23,19 +27,52 @@ export class CanvasPanelComponent  implements OnInit, AfterViewInit {
   ngAfterViewInit() {
 
     var id = document.getElementById("drawflow");
-    const editor = new Drawflow(id!);
-    editor.start();
+    this.editor = new Drawflow(id!);
 
-    var html = `
-    <div>
-      <div class='node-header'>Set Var</div>
-      </div>
-    `;
+    // this.editor.on('click', this.handleEditorClick);
+
+    this.editor.start();
+
+    this.editor.on('connectionStart', (e) => {
+      console.log('connectionStart', e);
+    })
+
+    this.editor.on('mouseMove', (e) => {
+      // console.log(e);
+      this.cursorPos = e;
+    })
+
+    this.editor.on('connectionCancel', (e) => {
+      
+      if(this.editorService.selectedNode) {
+        const n = this.editorService.getSelectedNodeData();
+        if(n) {
+          this.addNode(n, this.cursorPos.x, this.cursorPos.y);
+        }
+      }
+
+    })
+
+    const n = new VarDefine();
+
+    this.addNode(n, 150, 300);
+
+  }
+
+  addNode(n:EditorNode, pos_x:number, pos_y:number) {
+
+    pos_x = pos_x * ( this.editor!.precanvas.clientWidth / (this.editor!.precanvas.clientWidth * this.editor!.zoom)) 
+      - (this.editor!.precanvas.getBoundingClientRect().x * ( this.editor!.precanvas.clientWidth / (this.editor!.precanvas.clientWidth * this.editor!.zoom)));
+    pos_y = pos_y * ( this.editor!.precanvas.clientHeight / (this.editor!.precanvas.clientHeight * this.editor!.zoom)) 
+      - (this.editor!.precanvas.getBoundingClientRect().y * ( this.editor!.precanvas.clientHeight / ( this.editor!.precanvas.clientHeight * this.editor!.zoom)));
+
+    const sig = n.signature();
+
+    var html = n.nodeHtml;
     var data = { "name": '' };
 
-    editor.addNode('github', 0, 1, 150, 300, 'github', data, html, false);
+    this.editor!.addNode('github', sig.inputs.length, sig.outputs.length, pos_x, pos_y, 'github', data, html, false);
 
-    console.log(editor.export())
   }
 
 }

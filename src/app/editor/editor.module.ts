@@ -10,6 +10,7 @@ import { PaletePanelComponent } from './components/palete-panel/palete-panel.com
 import { ColorPickerPanelComponent } from './components/color-picker-panel/color-picker-panel.component';
 import { CanvasPanelComponent } from './components/canvas-panel/canvas-panel.component';
 import { IoPanelComponent } from './components/io-panel/io-panel.component';
+import { NodeDialogComponent } from './components/node-dialog/node-dialog.component';
 
 
 import { ButtonModule } from 'primeng/button';
@@ -19,6 +20,7 @@ import { SplitterModule } from 'primeng/splitter';
 import { AngularSplitModule } from 'angular-split';
 import { TreeModule } from 'primeng/tree';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { DialogModule } from 'primeng/dialog';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     PaletePanelComponent,
     ColorPickerPanelComponent,
     CanvasPanelComponent,
-    IoPanelComponent
+    IoPanelComponent,
+    NodeDialogComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +41,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     SplitterModule,
     AngularSplitModule,
     TreeModule,
-    SelectButtonModule
+    SelectButtonModule,
+    DialogModule
   ],
   providers: [
     EditorService
